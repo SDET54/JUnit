@@ -59,8 +59,7 @@ public class C01_TekrarTesti {
         driver.findElement(By.className("gLFyf")).sendKeys(aranmasiIstenenMetin + Keys.ENTER);
 
         //    6. Bulunan sonuc sayisini yazdirin
-        String[] sonucText = driver.findElement(By.xpath("//div[@id='result-stats']")).getText().split(" ");
-        String sonucSayisi = sonucText[1];
+        String sonucSayisi = driver.findElement(By.xpath("//div[@id='result-stats']")).getText().split(" ")[1];
         System.out.println(aranmasiIstenenMetin + " bulunan sonuc sayisi= " + sonucSayisi);
 
         //    7. sonuc sayisinin 10 milyon’dan fazla oldugunu test edin

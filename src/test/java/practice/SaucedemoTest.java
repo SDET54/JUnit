@@ -54,9 +54,9 @@ public class SaucedemoTest {
         driver.findElement(By.id("login-button")).click();
 
         //    5. Ilk urunun ismini kaydedin ve bu urunun sayfasina gidin
-        List<WebElement> urunIsimleri = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
-        String ilkUrunIsmi = urunIsimleri.get(0).getText();
-        urunIsimleri.get(0).click();
+        WebElement urunIsimleri = driver.findElement(By.xpath("//div[@class='inventory_item_name'][1]"));
+        String ilkUrunIsmi = urunIsimleri.getText();
+        urunIsimleri.click();
 
         //    6. Add to Cart butonuna basin
         driver.findElement(By.xpath("//*[.='Add to cart']")).click();
