@@ -13,7 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.Arrays;
 
-public class Test01 {
+
+public class AmazonAramaTesti {
 
     WebDriver driver;
 
@@ -53,13 +54,14 @@ public class Test01 {
 
         //4. Bulunan sonuc sayisini yazdiralim
         WebElement sonucSayisiText = driver.findElement(By.xpath("//div[@data-cel-widget='UPPER-RESULT_INFO_BAR-0']"));
+
         Arrays.stream(sonucSayisiText.
                         getText().
                         split("\"")).
                 limit(1).
                 map(t -> t.
                         split(" ")).
-                forEach(t -> System.out.println(aranmasiIstenenMetin + " icin sonuc sayisi = " + t[t.length - 3]));
+                forEach(t -> System.out.println(aranmasiIstenenMetin + " icin sonuc sayisi= " + t[t.length - 3]));
 
         //5. Ilk urunu tiklayalim
         driver.findElement(By.xpath("//img[@data-image-index='1']")).click();
@@ -68,3 +70,4 @@ public class Test01 {
         System.out.println("sayfa basligi: " + driver.getTitle());
     }
 }
+
