@@ -2,6 +2,7 @@ package practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -65,9 +66,11 @@ public class C01_TekrarTesti {
         //    7. sonuc sayisinin 10 milyon’dan fazla oldugunu test edin
         sonucSayisi = sonucSayisi.replaceAll("\\D", "");
         int istenenSayi = 10000000;
-        if (Integer.parseInt(sonucSayisi) > istenenSayi) {
-            System.out.println(Integer.parseInt(sonucSayisi) + " > " + istenenSayi + " test PASSED");
-        } else System.out.println(Integer.parseInt(sonucSayisi) + " !> " + istenenSayi + " test PASSED");
+        Assert.assertTrue(Integer.parseInt(sonucSayisi) > istenenSayi);
+
+        //if (Integer.parseInt(sonucSayisi) > istenenSayi) {
+        //            System.out.println(Integer.parseInt(sonucSayisi) + " > " + istenenSayi + " test PASSED");
+        //        } else System.out.println(Integer.parseInt(sonucSayisi) + " !> " + istenenSayi + " test PASSED");
 
         //    8. Sayfayi kapatin
         //       ok
