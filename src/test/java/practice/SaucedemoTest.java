@@ -2,6 +2,7 @@ package practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -66,9 +67,7 @@ public class SaucedemoTest {
 
         //    8. Sectiginiz urunun basarili olarak sepete eklendigini control edin
         String sepettekiUrunIsmi = driver.findElement(By.xpath("//div[@class='cart_item']//div/a/div")).getText();
-        if (ilkUrunIsmi.equals(sepettekiUrunIsmi)) {
-            System.out.println("urun sepete ekleme testi PASSED");
-        }else System.out.println("urun sepete ekleme testi FAILED");
+        Assert.assertEquals(sepettekiUrunIsmi, ilkUrunIsmi);
 
         //    9. Sayfayi kapatin.
         //       ok
