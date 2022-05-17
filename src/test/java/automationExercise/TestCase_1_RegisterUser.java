@@ -53,7 +53,7 @@ public class TestCase_1_RegisterUser {
     }
 
     @Test
-    public void test01() throws InterruptedException {
+    public void test01() {
         //2. Navigate to url 'http://automationexercise.com'
         driver.navigate().to("http://automationexercise.com");
 
