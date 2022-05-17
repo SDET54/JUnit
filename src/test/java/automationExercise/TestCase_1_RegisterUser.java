@@ -68,7 +68,8 @@ public class TestCase_1_RegisterUser {
 
         //6. Enter name and email address
         driver.findElement(By.xpath("//input[@data-qa='signup-name']")).sendKeys("Vasif");
-        driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("techpro2@gmail.com");
+        //delete calismadigi icin her signUp'dan sonra girilecek email adresini degistirmek lazim
+        driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("techpro5@gmail.com");
 
         //7. Click 'Signup' button
         driver.findElement(By.xpath("//button[@data-qa='signup-button']")).click();
