@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Q3 {
+public class Q3_AddDeleteElement {
 
     /*
      ...Exercise3...
@@ -22,35 +22,31 @@ public class Q3 {
     1.method : createButtons(100)
     2.deleteButtonsAndValidate()
  */
+
     WebDriver driver;
-
-    @Before
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-    }
-
-    @After
-    public void tearDown() {
-        driver.close();
-    }
 
     @Test
     public void test01() {
-        driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         int creat = 100;
-        createButtons(creat);
         int delete = 50;
+
         if (creat > delete) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+            driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
+
+            createButtons(creat);
             deleteButtonsAndValidate(delete);
+
             WebElement deleteButton = driver.findElement(By.xpath("//div[@id='elements']"));
             String[] deleteButtonArr = deleteButton.getText().split("ete");
             Assert.assertEquals(creat - delete, deleteButtonArr.length);
         } else System.out.println("Creat Delete'den kucuk ve ya Delete'ye esit olamaz");
 
-
+        driver.close();
     }
 
     public void createButtons(int a) {
