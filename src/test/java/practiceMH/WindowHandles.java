@@ -10,7 +10,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class WindowHandles {
     //●Tests package’inda yeni bir class olusturun: WindowHandles
@@ -58,12 +60,22 @@ public class WindowHandles {
         driver.findElement(By.linkText("Click Here")).click();
 
         Set<String> windowHandles = driver.getWindowHandles();
+
+        //1.yol
         String ikinciSayfaWindowHandle = "";
         for (String each : windowHandles) {
             if (!each.equals(ilkSayfaWindowHandle)) {
                 ikinciSayfaWindowHandle = each;
             }
         }
+        //2.yol lambda
+        String ikinciSayfaWindowHandleLambda = windowHandles.
+                stream().
+                filter(t->!t.equals(ilkSayfaWindowHandle)).
+                collect(Collectors.toList()).get(0);
+        System.out.println("ikinciSayfaWindowHandle: " + ikinciSayfaWindowHandle);
+        System.out.println("ikinciSayfaWindowHandleLambda: " + ikinciSayfaWindowHandleLambda);
+
         driver.switchTo().window(ikinciSayfaWindowHandle);
 
         //●Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
