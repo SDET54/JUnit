@@ -6,9 +6,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-import javax.xml.crypto.Data;
-import java.time.LocalDateTime;
-import java.util.Arrays;
 
 public class KeyboardActions2 extends TestBase {
     /*
