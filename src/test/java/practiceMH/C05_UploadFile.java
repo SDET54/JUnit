@@ -34,4 +34,5 @@ public class C05_UploadFile extends TestBase {
         //6. “File Uploaded!” textinin goruntulendigini test edelim
         Assert.assertTrue(driver.findElement(By.tagName("h3")).isDisplayed());
     }
+
 }
