@@ -64,7 +64,8 @@ public class WindowHandleHomeWork extends TestBase {
                 sendKeys(Keys.TAB).
                 sendKeys(faker.internet().password()).
                 sendKeys(Keys.TAB).
-                sendKeys(Keys.ENTER).perform();
+                sendKeys(Keys.ENTER).
+                perform();
 
         //7.Popup'ta cikan yazinin "validation failed" oldugunu test edin
         String exceptedPopText = "validation failed";
