@@ -36,7 +36,7 @@ public class EnableTest {
 
     @After
     public void tearDown() {
-        //driver.close();
+        driver.close();
     }
 
     @Test
