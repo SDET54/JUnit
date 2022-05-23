@@ -13,6 +13,9 @@ import java.util.List;
 
 public class AmazonIphone13 extends TestBase {
 
+    //Kendime not:
+    //Bu testte ilk sorun test kontrolunde amazon sitesi 3 farkli sekilde goruntuleniyor ve
+    //onemli olan locate-ler her birinde degise biliyor. Yine de incelemem lazim.
 
     static List<String> renkListesi = new ArrayList<>();
     static List<String> sizeListesi = new ArrayList<>();
@@ -65,6 +68,7 @@ public class AmazonIphone13 extends TestBase {
                     "Stok: " + stokListesi.get(j) + "\n");
         }
     }
+
     private void colorPriceStock() throws InterruptedException {
         Thread.sleep(1000);
         WebElement sizeElementi = driver.findElement(By.id("inline-twister-dim-title-size_name"));
