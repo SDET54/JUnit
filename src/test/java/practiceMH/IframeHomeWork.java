@@ -19,7 +19,7 @@ public class IframeHomeWork extends TestBase {
      */
 
     @Test
-    public void test01() {
+    public void test01() throws InterruptedException {
         //1. “http://webdriveruniversity.com/IFrame/index.html” sayfasina gidin
         driver.get("http://webdriveruniversity.com/IFrame/index.html");
 
@@ -31,6 +31,7 @@ public class IframeHomeWork extends TestBase {
         driver.findElement(By.xpath("//*[text()='Cameras']")).click();
 
         //4. Popup mesajini yazdirin
+        Thread.sleep(3000);
         WebElement popElementi = driver.findElement(By.className("modal-content"));
         System.out.println(popElementi.getText());
 
