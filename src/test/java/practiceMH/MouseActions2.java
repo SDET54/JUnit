@@ -27,9 +27,9 @@ public class MouseActions2 extends TestBase {
         actions.dragAndDrop(dragMeElement,dropHereElement).perform();
 
         //3-“Drop here” yazisi yerine “Dropped!” oldugunu test edin
-        String exceptedTextAfterDragDrop = "Dropped!";
+        String expectedTextAfterDragDrop = "Dropped!";
         String actualTextAfterDragDrop = driver.findElement(By.xpath("//*[text()='Dropped!']")).getText();
-        Assert.assertEquals(exceptedTextAfterDragDrop,actualTextAfterDragDrop);
+        Assert.assertEquals(expectedTextAfterDragDrop,actualTextAfterDragDrop);
 
     }
 }

@@ -68,10 +68,10 @@ public class WindowHandleHomeWork extends TestBase {
                 perform();
 
         //7.Popup'ta cikan yazinin "validation failed" oldugunu test edin
-        String exceptedPopText = "validation failed";
+        String expectedPopText = "validation failed";
         String actualPopText = driver.switchTo().alert().getText();
 
-        Assert.assertEquals(exceptedPopText, actualPopText);
+        Assert.assertEquals(expectedPopText, actualPopText);
 
         //8.Ok diyerek Popup'i kapatin
         driver.switchTo().alert().accept();

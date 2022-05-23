@@ -78,14 +78,14 @@ public class WindowHandles {
         driver.switchTo().window(ikinciSayfaWindowHandle);
 
         //●Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
-        String newWindowExceptedTitle = "New Window";
+        String newWindowExpectedTitle = "New Window";
         String newWindowActualTitle = driver.getTitle();
-        Assert.assertEquals(newWindowExceptedTitle, newWindowActualTitle);
+        Assert.assertEquals(newWindowExpectedTitle, newWindowActualTitle);
 
         //●Sayfadaki textin “New Window” olduğunu doğrulayın.
-        String newWindowExceptedText = "New Window";
+        String newWindowExpectedText = "New Window";
         String newWindowActualText = driver.findElement(By.tagName("h3")).getText();
-        Assert.assertEquals(newWindowExceptedText, newWindowActualText);
+        Assert.assertEquals(newWindowExpectedText, newWindowActualText);
 
         //●Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu
         // doğrulayın.
