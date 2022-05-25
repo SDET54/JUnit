@@ -26,6 +26,7 @@ public class Q09_Alert extends TestBase {
         driver.findElement(By.xpath("//button[@class='btn btn-danger']")).click();
 
         //    accept Alert(I am an alert box!) and print alert on console
+        System.out.println(driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
 
         //    click "Alert with OK & Cancel" and click 'click the button to display a confirm box'
