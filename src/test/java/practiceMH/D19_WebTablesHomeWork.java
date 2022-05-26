@@ -39,9 +39,10 @@ girdigimde bana datayi yazdirsin
             }
         }
         List<WebElement> departmentElemantlari = driver.findElements(By.xpath("//div[@class='rt-tr-group']/div/div[" + (departmentSutunNo + 1) + "]"));
-        for (int i = 0; i < 3; i++) {
-            System.out.print(departmentElemantlari.get(i).getText() + " ");
-        }
+       departmentElemantlari.
+               stream().
+               filter(t->!(t.getText().equals(" "))).
+               forEach(t-> System.out.println(t.getText()));
 
         System.out.println("\n========================================================\n");
         //3. sutunlarin basligini yazdirin
